@@ -41,14 +41,14 @@ public class RayShooter : MonoBehaviour
                 Destroy(shootVfx, 1.5f);
                 Destroy(hitVfx, 1.5f);
 
-                if (hit.collider.CompareTag("Enemy"))
+                /*if (hit.collider.CompareTag("Enemy"))
                 {
                     Enemy enemy = hit.collider.GetComponent<Enemy>();
                     if (enemy !=null)
                     {
                         enemy.TakeDamage(damage);
                     }
-                }
+                }*/
 
                 // เช็คว่าโดน tag "Obstacle" มั้ย
                 // ดึง <Rigidbody> ใส่ตัวแปร rb
