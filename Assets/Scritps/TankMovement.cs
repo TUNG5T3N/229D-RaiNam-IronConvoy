@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class TankMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float rotateSpeed = 120f;
@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Rotate();
-        Jump();
+        //Jump();
     }
 
     void FixedUpdate()
