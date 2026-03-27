@@ -18,7 +18,6 @@ public class TankMovement : MonoBehaviour
     void Update()
     {
         Rotate();
-        //Jump();
     }
 
     void FixedUpdate()
@@ -28,8 +27,6 @@ public class TankMovement : MonoBehaviour
 
     void Move()
     {
-        //Forward / Backward movement (W/S)
-        //float v = Input.GetAxis("Vertical");
         float v = 0;
         if (Keyboard.current != null)
         {
@@ -42,8 +39,6 @@ public class TankMovement : MonoBehaviour
 
     void Rotate()
     {
-        //Left / Right rotation (A/D)
-        //float h = Input.GetAxis("Horizontal");
         float h = 0;
         if (Keyboard.current != null)
         {
@@ -53,26 +48,12 @@ public class TankMovement : MonoBehaviour
         transform.Rotate(Vector3.up * h * rotateSpeed * Time.deltaTime);
     }
 
-    void Jump()
+    void Unstuck()
     {
-        bool jumpPressed = Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame;
-        /*if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }*/
-        if (jumpPressed && isGrounded)
-        {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        if(Keyboard.current.rKey.isPressed)
+        { 
+                
         }
     }
 
-    void OnCollisionStay(Collision collision)
-    {
-        isGrounded = true;
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        isGrounded = false;
-    }
 }
