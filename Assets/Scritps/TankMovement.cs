@@ -23,6 +23,7 @@ public class TankMovement : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        Boost();
     }
 
     void Move()
@@ -46,6 +47,18 @@ public class TankMovement : MonoBehaviour
         }
 
         transform.Rotate(Vector3.up * h * rotateSpeed * Time.deltaTime);
+    }
+
+    void Boost()
+    {
+        if(Keyboard.current.leftShiftKey.wasPressedThisFrame)
+        {
+            moveSpeed *= 2;
+        }
+        if (Keyboard.current.leftShiftKey.wasReleasedThisFrame)
+        {
+            moveSpeed /= 2;
+        }
     }
 
     void Unstuck()
